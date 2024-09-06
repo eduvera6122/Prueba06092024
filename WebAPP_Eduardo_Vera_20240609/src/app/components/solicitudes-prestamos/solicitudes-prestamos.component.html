@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+
+<!-- solicitud.component.html -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <h4 class="card-title text-center mb-4">Ingresar Solicitud</h4>
+            <form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()">
+              <!-- Campo de Fecha de Solicitud -->
+              <div class="mb-3">
+                <label for="fechaSolicitud" class="form-label">Fecha de Solicitud:</label>
+                <input
+                  id="fechaSolicitud"
+                  formControlName="fechaSolicitud"
+                  type="datetime-local"
+                  class="form-control"
+                  [ngClass]="{'is-invalid': solicitudForm.get('fechaSolicitud')?.invalid && solicitudForm.get('fechaSolicitud')?.touched}"
+                />
+              
+              </div>
+  
+              <!-- Campo de Monto Solicitado -->
+              <div class="mb-3">
+                <label for="montoSolicitado" class="form-label">Monto Solicitado:</label>
+                <input
+                  id="montoSolicitado"
+                  formControlName="montoSolicitado"
+                  type="number"
+                  class="form-control"
+                  placeholder="Ingrese el monto"
+                  [ngClass]="{'is-invalid': solicitudForm.get('montoSolicitado')?.invalid && solicitudForm.get('montoSolicitado')?.touched}"
+                />    
+              </div>
+
+              <!-- Botón de Envío -->
+              <button type="submit" class="btn btn-primary w-100" [disabled]="solicitudForm.invalid">
+                Enviar Solicitud
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

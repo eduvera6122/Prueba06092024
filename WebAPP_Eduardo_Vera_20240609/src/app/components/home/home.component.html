@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+
+<h1 class="m-5 text-center">Solicitudes Prestamos</h1>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">usuario</th>
+        <th scope="col">fechaSolicitud</th>
+        <th scope="col">montoSolicitado</th>
+        <th scope="col">estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of solicitudes">
+        <th scope="row">{{ item.solicitudId }}</th>
+        <td>{{ item.usuario.nombre }}</td>
+        <td>{{ item.fechaSolicitud }}</td>
+        <td>{{ item.montoSolicitado }}</td>
+        <td>
+          {{ item.estado }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

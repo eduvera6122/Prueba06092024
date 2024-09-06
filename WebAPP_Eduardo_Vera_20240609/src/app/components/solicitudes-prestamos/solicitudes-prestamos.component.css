@@ -1,0 +1,15 @@
+/* solicitud.component.css */
+.card {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    color: #007bff;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
